@@ -8,5 +8,7 @@ int main(void) {
 
 	logger lg;
 
+	lg.println("Logger initialized");
+
 	return 0;
 }
