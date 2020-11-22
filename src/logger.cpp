@@ -15,14 +15,21 @@ void logger::println(const std::string msg) {
 	* output_log << msg << std::endl;
 }
 
-void logger::trace_fn_begin(std::string fn_name) {
+
+void logger::set_fn_name(const std::string fn_name) {
+	fn_names_stack.push ( fn_name );
+}
+
+void logger::trace_fn_begin(void) {
 	* output_log << "[TRACE]";
-	* output_log << "[" << fn_name << "]";
+	* output_log << "[" << fn_names_stack.top() << "]";
 	* output_log << "[BEGIN]" << std::endl;
 }
 
-void logger::trace_fn_end(std::string fn_name) {
+void logger::trace_fn_end(void) {
 	* output_log << "[TRACE]";
-	* output_log << "[" << fn_name << "]";
+	* output_log << "[" << fn_names_stack.top() << "]";
 	* output_log << "[END]" << std::endl;
+
+	fn_names_stack.pop();
 }
