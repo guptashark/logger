@@ -36,6 +36,8 @@ public:
 	void trace_fn_begin(void);
 	void trace_println(std::string s);
 	void trace_fn_end(void);
+
+	void error_log(std::string s);
 };
 
 #endif

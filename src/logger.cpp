@@ -42,3 +42,11 @@ void logger::trace_fn_end(void) {
 
 	fn_names_stack.pop();
 }
+
+void logger::error_log(std::string s) {
+	* output_log << "[ERROR]";
+	* output_log << "[" << src_file << "]";
+	* output_log << "[" << fn_names_stack.top() << "]";
+	* output_log << " " << s;
+	* output_log << std::endl;
+}

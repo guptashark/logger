@@ -34,7 +34,7 @@ int logger_test_01(void) {
 
 	lg.set_fn_name("baz");
 	lg.trace_fn_begin();
-	lg.trace_println("doing something very cool");
+	lg.error_log("pointer to obj is null!");
 	lg.trace_fn_end();
 
 	lg.trace_fn_end();
