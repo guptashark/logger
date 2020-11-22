@@ -27,10 +27,14 @@ int logger_test_01(void) {
 
 	lg.set_fn_name("bar");
 	lg.trace_fn_begin();
+	lg.trace_println("doing something cool");
 	lg.trace_fn_end();
+
+	lg.trace_println("now going to call baz");
 
 	lg.set_fn_name("baz");
 	lg.trace_fn_begin();
+	lg.trace_println("doing something very cool");
 	lg.trace_fn_end();
 
 	lg.trace_fn_end();

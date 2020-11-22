@@ -31,6 +31,7 @@ public:
 	// stack.
 	void set_fn_name(const std::string fn_name);
 	void trace_fn_begin(void);
+	void trace_println(std::string s);
 	void trace_fn_end(void);
 };
 

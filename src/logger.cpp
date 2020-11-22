@@ -26,6 +26,14 @@ void logger::trace_fn_begin(void) {
 	* output_log << "[BEGIN]" << std::endl;
 }
 
+void logger::trace_println(std::string s) {
+	* output_log << "[TRACE]";
+	* output_log << "[" << src_file << "]";
+	* output_log << "[" << fn_names_stack.top() << "]";
+	* output_log << " " << s;
+	* output_log << std::endl;
+}
+
 void logger::trace_fn_end(void) {
 	* output_log << "[TRACE]";
 	* output_log << "[" << src_file << "]";
