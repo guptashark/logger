@@ -3,6 +3,7 @@
 #include "logger.hpp"
 
 #include "coffee.hpp"
+#include "latte.hpp"
 
 static logger main_lg ("main.cpp");
 
@@ -15,9 +16,17 @@ int main(void) {
 	main_lg.trace_printf("Instantiating coffee obj");
 
 	{
-		coffee c(3);
+		coffee c(100);
 		int val = c.get_percent_coffee();
 		main_lg.trace_printf("Get percent coffee: %d", val);
+	}
+
+	main_lg.trace_printf("==================================");
+
+	{
+		latte l(30);
+		int val = l.get_percent_coffee();
+		main_lg.trace_printf("Get pct coffee from latte: %d", val);
 	}
 
 	main_lg.trace_fn_end();

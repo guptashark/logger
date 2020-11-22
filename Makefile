@@ -6,7 +6,7 @@ CXXFLAGS = -Wall -Werror -Wextra
 all: demo
 
 demo:
-	$(CXX) $(CXXFLAGS) -Iinclude -Idemos src/logger.cpp demos/main.cpp demos/coffee.cpp -o bin/demo
+	$(CXX) $(CXXFLAGS) -Iinclude -Idemos src/logger.cpp demos/main.cpp demos/coffee.cpp demos/latte.cpp -o bin/demo
 	./bin/demo
 
 tests:
