@@ -57,6 +57,11 @@ void logger::trace_printf(const char * fmt_str, ...) {
 				// write an int.
 				int val = va_arg(valist, int);
 				* output_log << val;
+			} else if ( s[i+1] == 's' ) {
+				// write a string.
+				const char * str_val = va_arg(valist, char *);
+				std::string val(str_val);
+				* output_log << val;
 			}
 
 			i++;
