@@ -19,6 +19,9 @@ int main(void) {
 		coffee c(100);
 		int val = c.get_percent_coffee();
 		main_lg.trace_printf("Get percent coffee: %d", val);
+
+		std::string taste = c.get_taste();
+		main_lg.trace_println(taste);
 	}
 
 	main_lg.trace_printf("==================================");
@@ -27,6 +30,9 @@ int main(void) {
 		latte l(30);
 		int val = l.get_percent_coffee();
 		main_lg.trace_printf("Get pct coffee from latte: %d", val);
+
+		std::string taste = l.get_taste();
+		main_lg.trace_println(taste);
 	}
 
 	main_lg.trace_fn_end();

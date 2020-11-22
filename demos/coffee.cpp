@@ -26,3 +26,12 @@ int coffee::get_percent_coffee(void) const {
 
 	return percent_coffee;
 }
+
+std::string coffee::get_taste(void) const {
+
+	cof_lg.set_fn_name("coffee::get_taste");
+	cof_lg.trace_fn_begin();
+	cof_lg.trace_fn_end();
+
+	return "Full bodied taste, can be bitter if not brewed well.";
+}

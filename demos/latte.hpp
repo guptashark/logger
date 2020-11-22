@@ -9,6 +9,8 @@ private:
 public:
 	latte(int percent_coffee);
 	~latte(void);
+
+	std::string get_taste(void) const override;
 };
 
 #endif

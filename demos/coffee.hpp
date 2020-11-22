@@ -12,6 +12,8 @@ public:
 	~coffee(void);
 
 	int get_percent_coffee(void) const;
+
+	virtual std::string get_taste(void) const;
 };
 
 #endif
