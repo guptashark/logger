@@ -2,16 +2,15 @@
 
 #include "logger.hpp"
 
-logger::logger(void) {
-	output_log =  & std::cout;
-}
+std::ostream * logger::output_log = & std::cout;
 
-logger::logger(std::string output_file) {
+void logger::set_output_file(std::string output_file) {
 	output_log = new std::ofstream(output_file);
 }
 
-void logger::println(const std::string msg) {
+logger::logger() {}
 
+void logger::println(const std::string msg) {
 	* output_log << msg << std::endl;
 }
 

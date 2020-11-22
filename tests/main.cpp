@@ -3,29 +3,24 @@
 
 #include "logger.hpp"
 
-int logger_test_02(void);
+int logger_test_01(void);
 
 int main(void) {
 
 	std::cout << "Logger Tests" << std::endl;
 
-	logger_test_02();
+	logger::set_output_file("tests/actual/logger_test_01_actual.txt");
 
-	logger lg ( "tests/actual/logger_test_01_actual.txt");
-
-	lg.println("Logger initialized");
-	lg.set_fn_name("main");
-	lg.trace_fn_begin();
-	lg.trace_fn_end();
+	logger_test_01();
 
 	return 0;
 }
 
-int logger_test_02(void) {
+int logger_test_01(void) {
 
-	logger lg ( "tests/actual/logger_test_02_actual.txt");
+	logger lg;
 
-	// emulate calling foo, and foo calls bar.
+	// emulate calling foo, and foo calls bar, all in file: file_01
 	// bar exits, then foo calls baz.
 	lg.set_fn_name("foo");
 	lg.trace_fn_begin();

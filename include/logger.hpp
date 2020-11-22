@@ -10,11 +10,13 @@ class logger {
 
 private:
 	// the location to output to.
-	std::ostream * output_log;
+	static std::ostream * output_log;
 
 	std::stack<std::string> fn_names_stack;
 
 public:
+	static void set_output_file (std::string output_file);
+
 	logger(void);
 
 	// file to output logs to, instead of stdout.
