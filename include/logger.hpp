@@ -1,6 +1,7 @@
 #ifndef LOGGER_HPP
 #define LOGGER_HPP
 
+#include <cstdarg>
 #include <fstream>
 #include <string>
 
@@ -35,6 +36,7 @@ public:
 	void set_fn_name(const std::string fn_name);
 	void trace_fn_begin(void);
 	void trace_println(std::string s);
+	void trace_printf(const char * fmt_str, ...);
 	void trace_fn_end(void);
 
 	void error_log(std::string s);
