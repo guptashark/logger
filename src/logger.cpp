@@ -8,7 +8,7 @@ void logger::set_output_file(std::string output_file) {
 	output_log = new std::ofstream(output_file);
 }
 
-logger::logger() {}
+logger::logger(std::string src_file): src_file(src_file) {}
 
 void logger::println(const std::string msg) {
 	* output_log << msg << std::endl;
@@ -21,12 +21,14 @@ void logger::set_fn_name(const std::string fn_name) {
 
 void logger::trace_fn_begin(void) {
 	* output_log << "[TRACE]";
+	* output_log << "[" << src_file << "]";
 	* output_log << "[" << fn_names_stack.top() << "]";
 	* output_log << "[BEGIN]" << std::endl;
 }
 
 void logger::trace_fn_end(void) {
 	* output_log << "[TRACE]";
+	* output_log << "[" << src_file << "]";
 	* output_log << "[" << fn_names_stack.top() << "]";
 	* output_log << "[END]" << std::endl;
 

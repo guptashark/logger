@@ -13,14 +13,12 @@ private:
 	static std::ostream * output_log;
 
 	std::stack<std::string> fn_names_stack;
+	std::string src_file;
 
 public:
 	static void set_output_file (std::string output_file);
 
-	logger(void);
-
-	// file to output logs to, instead of stdout.
-	logger(std::string output_file);
+	logger(std::string src_file);
 
 	void println(const std::string msg);
 

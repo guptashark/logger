@@ -18,7 +18,7 @@ int main(void) {
 
 int logger_test_01(void) {
 
-	logger lg;
+	logger lg("file_01.cpp");
 
 	// emulate calling foo, and foo calls bar, all in file: file_01
 	// bar exits, then foo calls baz.
