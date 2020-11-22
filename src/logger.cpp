@@ -48,9 +48,7 @@ void logger::trace_printf(const char * fmt_str, ...) {
 
 	for ( unsigned int i = 0; i < s.size(); i++) {
 		if ( s[i] != '%' ) {
-			std::string current_char;
-			current_char.push_back(s[i]);
-			* output_log << current_char;
+			* output_log << s[i];
 		} else {
 
 			if ( s[i+1] == 'd' ) {
@@ -61,6 +59,10 @@ void logger::trace_printf(const char * fmt_str, ...) {
 				// write a string.
 				const char * str_val = va_arg(valist, char *);
 				std::string val(str_val);
+				* output_log << val;
+			} else if ( s[i+1] == 'c' ) {
+				// write a char
+				char val = va_arg(valist, int);
 				* output_log << val;
 			}
 

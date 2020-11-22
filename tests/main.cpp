@@ -38,6 +38,7 @@ int logger_test_01(void) {
 	lg.trace_printf("int: %d", 20);
 	lg.trace_printf("string: %s", "hello world!");
 	lg.trace_printf("int and string: %s: %d", "id", 4456);
+	lg.trace_printf("char: %c", 'c');
 	lg.trace_fn_end();
 
 	lg.trace_fn_end();
