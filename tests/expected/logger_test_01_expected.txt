@@ -1,0 +1,3 @@
+Logger initialized
+[TRACE][main][BEGIN]
+[TRACE][main][END]
