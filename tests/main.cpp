@@ -9,6 +9,8 @@ int main(void) {
 	logger lg;
 
 	lg.println("Logger initialized");
+	lg.trace_fn_begin("main");
+	lg.trace_fn_end("main");
 
 	return 0;
 }
