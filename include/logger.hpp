@@ -15,6 +15,9 @@ private:
 	std::stack<std::string> fn_names_stack;
 	std::string src_file;
 
+	// trace helper.
+	void trace_base(void);
+
 public:
 	static void set_output_file (std::string output_file);
 

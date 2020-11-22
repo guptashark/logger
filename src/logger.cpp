@@ -19,25 +19,25 @@ void logger::set_fn_name(const std::string fn_name) {
 	fn_names_stack.push ( fn_name );
 }
 
-void logger::trace_fn_begin(void) {
+void logger::trace_base(void) {
 	* output_log << "[TRACE]";
 	* output_log << "[" << src_file << "]";
 	* output_log << "[" << fn_names_stack.top() << "]";
+}
+
+void logger::trace_fn_begin(void) {
+	trace_base();
 	* output_log << "[BEGIN]" << std::endl;
 }
 
 void logger::trace_println(std::string s) {
-	* output_log << "[TRACE]";
-	* output_log << "[" << src_file << "]";
-	* output_log << "[" << fn_names_stack.top() << "]";
+	trace_base();
 	* output_log << " " << s;
 	* output_log << std::endl;
 }
 
 void logger::trace_fn_end(void) {
-	* output_log << "[TRACE]";
-	* output_log << "[" << src_file << "]";
-	* output_log << "[" << fn_names_stack.top() << "]";
+	trace_base();
 	* output_log << "[END]" << std::endl;
 
 	fn_names_stack.pop();
